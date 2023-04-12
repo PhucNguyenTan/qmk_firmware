@@ -42,6 +42,14 @@ enum {
     KC_SNAP,
     KC_CTANA,
     KC_SIRI,
+	//M1 = MONITOR 1, 2K = 1440P, U = UP, D = DOWN, C = CENTER, L = LEFT, R = RIGHT, M = MIDDLE
+	//Config:
+	//+ num = 
+	//Enter num = Apply move mouse to almost edge
+	M1_2KUL, M1_2KUC, M1_2KUR,
+	M1_2KML, M1_2KMC, M1_2KMR,
+	M1_2KDL, M1_2KDC, M1_2KDR,
+	
 #ifdef KC_BLUETOOTH_ENABLE
     BT_HST1,
     BT_HST2,

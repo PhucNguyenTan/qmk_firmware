@@ -67,6 +67,23 @@ bool dip_switch_update_kb(uint8_t index, bool active) {
     return true;
 }
 
+//MINE changes
+const uint16_t hAway = 65536;
+const uint16_t wAway = 65536; 
+const uint16_t hFHD = 1080;
+const uint16_t wFHD = 1920;
+const uint16_t hQHD = 1440;
+const uint16_t wQHD = 2560;
+uint16_t m1Height = hQHD; 
+uint16_t m1Width = wQHD;
+uint16_t m2Height = wQHD;
+uint16_t m2Height = hQHD;
+
+float half = 0.5f;
+float full = 0.975f; 
+
+//END MINE
+
 #ifdef KC_BLUETOOTH_ENABLE
 bool process_record_kb_bt(uint16_t keycode, keyrecord_t *record) {
 #else
@@ -112,6 +129,16 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 siri_timer_buffer = sync_timer_read32() | 1;
             }
             return false; // Skip all further processing of this key
+		case M1_2KUL:
+			if (record->event.pressed) 
+			{
+				MOUSE_MOVE(hAway, wAway, 0);
+			}
+			break;
+		case M1_2KML:
+			break;
+		case M1_2KML:
+			break;
 #ifdef KC_BLUETOOTH_ENABLE
         case BT_HST1 ... BT_HST3:
             if (get_transport() == TRANSPORT_BLUETOOTH) {
